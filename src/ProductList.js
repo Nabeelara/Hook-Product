@@ -1,5 +1,4 @@
 import React from 'react';
-import products from './data';
 
 const ProductList = ({ products, category }) => {
   const filterItems = category === 'All'
