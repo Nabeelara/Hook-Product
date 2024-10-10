@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductList from "./ProductList";
 import Categories from "./Categories";
-import items from "./data";
+import products from "./data";
 
 //Get exist categories
 const existCategories = [];
@@ -12,7 +12,7 @@ const allCategories = [];
 
 function App() {
   //create state for product items
-  const [productItems, setProductItems] = useState(items);
+  const [productItems, setProductItems] = useState(products);
   //create state for array categories
   const [categories, setCategories] = useState(allCategories);
 
@@ -31,7 +31,7 @@ function App() {
         <Categories categories={[]} filterItems={filterItems} />
       </section>
       {/* fill with state name*/}
-      <ProductList items={[]} />
+      <ProductList products={[{}]} />
     </main>
   );
 }

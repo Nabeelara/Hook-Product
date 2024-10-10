@@ -1,25 +1,30 @@
 import React from 'react';
+import products from './data';
 
-const ProductList = ({items}) => {
+const ProductList = ({ products, category }) => {
+  const filterItems = category === 'All'
+    ? products
+    : products.filter(product => product.category === category);
+
   return (
     <div className='section-center'>
-      {items.map((item) => {
-        const {id, title, img, desc, price} = item;
+      {filterItems.map((product) => {
+        const { id, title, img, desc, price } = product;
         return (
-            <article key=".." className='menu-item'>
-            <img src=".." alt=".." className='photo' />
+          <article key={id} className='menu-item'>
+            <img src={img} alt={title} className='photo' />
             <div className='item-info'>
               <header>
-                <h4>..</h4>
-                <h4 className='price'>..</h4>
+                <h4>{title}</h4>
+                <h4 className='price'>{price}</h4>
               </header>
-              <p className='item-text'>..</p>
+              <p className='item-text'>{desc}</p>
             </div>
           </article>
         );
       })}
     </div>
-  )
+  );
 };
 
 export default ProductList;

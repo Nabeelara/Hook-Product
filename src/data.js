@@ -86,4 +86,5 @@ const products = [
     desc: `Terbuat dari material 100% Breathable Poly Bamboo yang lembut & halus sehingga nyaman dipakai untuk beristirahat & moment santai saat dirumah.`,
   },
 ];
+console.log(products)
 export default products;
