@@ -14,7 +14,7 @@ function App() {
   //create state for product items
   const [productItems, setProductItems] = useState(products);
   //create state for array categories
-  const [categories, setCategories] = useState(allCategories);
+  const [categories, setCategories] = useState('All');
 
   const filterItems = (category) => {
     //WRITE YOUR CODE
@@ -28,10 +28,10 @@ function App() {
           <div className="underline"></div>
         </div>
         {/* fill with state name*/}
-        <Categories categories={[]} filterItems={filterItems} />
+        <Categories categories={allCategories} filterItems={filterItems} />
       </section>
       {/* fill with state name*/}
-      <ProductList products={[{}]} />
+      <ProductList products={products} category={categories} />
     </main>
   );
 }

@@ -5,6 +5,7 @@ const ProductList = ({ products, category }) => {
   const filterItems = category === 'All'
     ? products
     : products.filter(product => product.category === category);
+    console.log(filterItems)
 
   return (
     <div className='section-center'>
