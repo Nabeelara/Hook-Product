@@ -4,11 +4,11 @@ import Categories from "./Categories";
 import products from "./data";
 
 //Get exist categories
-const existCategories = [];
+const existCategories = products.map(product => product.category);
 //create set of unique category
-const myset = [];
+const myset = new Set(existCategories);
 //create array categories contains 'all' and exist categories
-const allCategories = [];
+const allCategories = ['All', ...myset];
 
 function App() {
   //create state for product items
@@ -17,7 +17,13 @@ function App() {
   const [categories, setCategories] = useState('All');
 
   const filterItems = (category) => {
-    //WRITE YOUR CODE
+    if (category === 'All') {
+      setProductItems(products);
+    } else {
+      const filteredItems = products.filter(product => product.category === category)
+      setProductItems(filteredItems);
+    }
+    setCategories(category)
   };
 
   return (
@@ -31,7 +37,7 @@ function App() {
         <Categories categories={allCategories} filterItems={filterItems} />
       </section>
       {/* fill with state name*/}
-      <ProductList products={products} category={categories} />
+      <ProductList products={productItems} category={categories} />
     </main>
   );
 }
