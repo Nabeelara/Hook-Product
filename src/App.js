@@ -20,7 +20,7 @@ function App() {
     if (category === 'All') {
       setProductItems(products);
     } else {
-      const filteredItems = products.filter(product => product.category === category)
+      const filteredItems = products.filter((product) => product.category === category)
       setProductItems(filteredItems);
     }
     setCategories(category)

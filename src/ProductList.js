@@ -1,14 +1,10 @@
 import React from 'react';
 
-const ProductList = ({ products, category }) => {
-  const filterItems = category === 'All'
-    ? products
-    : products.filter(product => product.category === category);
-    console.log(filterItems)
+const ProductList = ({ products }) => {
 
   return (
     <div className='section-center'>
-      {filterItems.map((product) => {
+      {products.map((product) => {
         const { id, title, img, desc, price } = product;
         return (
           <article key={id} className='menu-item'>

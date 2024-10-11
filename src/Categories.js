@@ -1,9 +1,7 @@
 import React from 'react';
 import './index.css';
 
-const Categories = ({filterItems}) => {
-  const categories = ['All', 'Topi', 'Kaos', 'Jas', 'Piyama']
-  console.log(categories)
+const Categories = ({categories, filterItems}) => {
 
   return (
     <div className="btn-container">
